@@ -1,0 +1,7 @@
+[28-Sep-2010 05:32:12] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/twitacc/public_html/incubator/myOAuth.php on line 29
+[28-Sep-2010 06:38:17] PHP Fatal error:  Call to undefined method myOAuth::dkratelimitskey() in /home/twitacc/public_html/incubator/myOAuth.php on line 42
+[28-Sep-2010 06:39:07] PHP Fatal error:  Call to undefined function addapistatinfo2() in /home/twitacc/public_html/incubator/myOAuth.php on line 48
+[28-Sep-2010 06:39:38] PHP Warning:  print_r() expects at least 1 parameter, 0 given in /home/twitacc/public_html/incubator/create_automated_unfollow_queue.php on line 15
+[28-Sep-2010 06:40:07] PHP Warning:  print_r() expects at least 1 parameter, 0 given in /home/twitacc/public_html/incubator/create_automated_unfollow_queue.php on line 15
+[28-Sep-2010 06:52:38] PHP Parse error:  syntax error, unexpected '{' in /home/twitacc/public_html/incubator/create_automated_unfollow_queue.php on line 22
+[08-Oct-2010 00:50:03] PHP Warning:  get_object_vars() expects parameter 1 to be object, null given in /home/twitacc/public_html/incubator/myOAuth.php on line 48

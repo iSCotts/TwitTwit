@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+.main {
+	width:150px;
+	height:200px;
+	color:#000;
+}
+H3 {
+	font-size: 16;
+	color: maroon;
+}
+
+* {
+	font-family: Verdana;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+.submit {
+	margin-left: 125px;
+	margin-top: 10px;
+}
+
+.emailerror {
+	padding:0 0 0 135px;
+	margin:-5px 0 0 0;
+	color:#ff0000;
+	font-size:11px;
+	font-family:Tahoma;
+}
+
+
+.label {
+	display: block;
+	float: left;
+	width: 100px;
+	text-align: right;
+	margin-right: 5px;
+}
+
+.form-row {
+	padding: 1px 0;
+	clear: both;
+	width: 375px;
+}
+
+label.error {
+	width: 120px;
+	display: block;
+	float: left;
+	color: red;
+	padding-left: 10px;
+}
+
+input[type=text],textarea {
+	width: 125px;
+	float: left;
+}
+input[type=password],textarea {
+	width: 125px;
+	float: left;
+}
+
+textarea {
+	height: 50px;
+}

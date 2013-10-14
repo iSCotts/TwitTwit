@@ -1,0 +1,21 @@
+<table>
+<tr>
+<td>
+Hai {username},<br>
+</td>
+</tr>
+<tr><td>
+	Thank you for your subscription.
+</td></tr>
+<tr><td>
+	You can sign in to the site with the following URL.
+</td><tr><td>
+        http://www.twitjix.com</td></tr>
+<tr><td>
+	Please provide your twitter username and password for login.<br>If you experience any problems email to support@twitjix.com<br>
+</td></tr>
+<tr><td>
+Regards,<br>
+Team Twitacc
+</td></tr>
+</table>

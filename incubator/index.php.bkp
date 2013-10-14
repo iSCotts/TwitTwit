@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script type="text/javascript" language="javascript" src="jquery-1.4.2.min.js" >
+</script>
+<script type="text/javascript" language="javascript" >
+$(document).ready(function() {
+	$.ajax({
+	   type: "POST",
+	   url: "automated_unfollow_settings.php",
+	   data: "user_id=1",
+	   success: function(msg){
+		 $('#automated_unfollow_main').html(msg);
+	   }
+	 });  
+});
+function automated_unfollow_setings()
+{
+	if ($('#automated_unfollow').attr('checked')) {
+		 var flag = 'Y';
+	}
+	else {
+		 var flag = 'N';
+	}
+	var wait_span = $('#automated_unfollow_wait_span').attr('value');
+	$.ajax({
+	   type: "POST",
+	   url: "automated_unfollow_settings_submit.php",
+	   data: "flag="+flag+"&wait_span="+wait_span,
+	   success: function(msg){
+	   	 if(msg=='failed')
+		 {
+		 alert('Update failed, server error');
+		 }
+	   }
+	 });  
+}
+</script>
+</head>
+
+<body>
+<div class="automated_unfollow" id="automated_unfollow_main">
+<img src="loading.gif" >
+</div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<?php
+include_once '../classes/paypal.class.php';
+include_once '../classes/class.phpmailer.php';
+$p = new paypal_class; 
+$p->paypal_url = 'https://www.paypal.com/cgi-bin/webscr'; 
+if(!$p->validate_ipn())
+{
+	?>
+	<html><head>
+	<title>404 Not Found</title>
+	</head><body>
+	<h1>Not Found</h1>
+	<p>The requested URL /signup/note.php was not found on this server.</p>
+	<p>Additionally, a 404 Not Found
+	error was encountered while trying to use an ErrorDocument to handle the request.</p>
+	<hr>
+	<address>Apache/2.2.13 (Unix) mod_ssl/2.2.13 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 Server at www.twitjix.com Port 80</address>
+	</body></html>
+	<?php
+}
+else
+{
+	include_once '../mail/sendMail.php';
+	include_once '../classes/dbClient.php';
+	include_once '../common/sqlFunctions.php';
+	$phpdate		= date("Y-m-d");
+	$time 			= date("H:i:s");
+	$phpnewdate =date('Y-m-d H:i:s');
+	$sub_status=$_POST['txn_type'];
+	
+	$customTemp		= explode('/brk/',$_POST['custom']); 
+	$next_date=$_POST['next_payment_date'];
+	if($next_date=="")
+		{
+	$next_date		= date("Y-m-d", mktime(0, 0, 0, date('m')+1, date('d'), date('Y')));
+	    }
+	$payment_status	= $_POST['payment_status'];
+	// ---- free trail related section ---
+	$freeTrialFlag = false;
+	$reason_code=$_POST['reason_code'];
+	if($sub_status == 'subscr_signup' && $_POST['payment_status']!="Completed")
+	{
+		$queryFreeTrial	= " SELECT `free_trial` FROM `ta_packages` WHERE `packageID` = '$customTemp[2]' ";
+		$freeTrial 		= runQuery($queryFreeTrial);
+		if(count($freeTrial)>0)
+		{
+			if($freeTrial[0]['free_trial'] == 'Y')
+			{
+				$freeTrialFlag  = true;
+				$next_date=$_POST['next_payment_date'];
+				if($next_date=="")
+				{
+				$next_date		= date("Y-m-d", mktime(0, 0, 0, date('m')+1, date('d')+7, date('Y')));
+				}
+				$payment_status	= 'Free Trial';
+			}
+		}
+	}
+	// ---- subscription cancellation section starts here---
+	if($sub_status=="subscr_cancel" || ($freeTrialFlag && $sub_status=="subscr_failed"))
+	{
+		$subscr_id=$_POST['subscr_id'];
+		$selquery		= "SELECT * FROM `ta_user_subscriptions` WHERE `subscr_id` = '$subscr_id'";
+		$subsdet 	= runQuery($selquery);
+		if(count($subsdet>0))
+		{
+			$username	=$subsdet[0]['UserName'];
+			$status	    =$subsdet[0]['status'];
+			$email	    =$subsdet[0]['Email'];
+			$packageid	=$subsdet[0]['PackageID'];
+			$subscr_id	=$subsdet[0]['subscr_id'];
+			$affiliateid	=$subsdet[0]['affiliateid'];
+			if($status=='Y')
+			{
+				$selectquery="SELECT * FROM `ta_user_subscriptions` WHERE `UserName` = '$username' order by DT DESC";
+				$result 	= runQuery($selectquery);
+				if(count($result)>0)
+					{
+					$newsub_id	=$result[0]['subscr_id'];	
+					$updatequery = "UPDATE `ta_user_subscriptions` SET `status`='Y' WHERE  `subscr_id`='$newsub_id' " ;
+					runQuery($updatequery);
+					}
+			 }
+			 //insert the subscription details to the history table and delete from ta_subscription_details and ta_user_subscriptions
+			//$insquery = "INSERT INTO `ta_subscription_history` (`username` ,`Email` ,`PackageID` ,`subscr_id`,	`affiliateid` ,`cancelled_date`,`next_payment_date`)
+	
+				//	VALUES ('$username', '$email', '$packageid', '$subscr_id', '$affiliateid', '$phpdate', '$next_payment_date')";
+			//	executeQuery($insquery);
+			//	$deletequery = "DELETE  FROM `ta_subscription_details` WHERE `subs_id`='".$subsdet[0]['SubsID']."' "; 
+			//	$deleteresult  = runQuery($deletequery);	
+			//	$deletequery = "DELETE  FROM `ta_user_subscriptions` WHERE `subscr_id`='$subscr_id' "; 
+			//	$deleteresult  = runQuery($deletequery);	
+		 }
+	 }
+	 // ---- subscription cancellation section ends here---
+	if(!empty($_POST['custom']) || $freeTrialFlag || $_POST['payment_status']=="Refunded"|| $_POST['payment_status']=="Completed" )
+	{
+	// if the payment is completed or if it is a free trial
+		if($_POST['payment_status']=="Completed"  || $freeTrialFlag )
+		{
+			if(count($customTemp)==4)
+			{
+				$query		= " SELECT `SubsID`, `Email` FROM `ta_user_subscriptions` WHERE `UserName` = '$customTemp[0]' ";
+				$userTemp 	= runQuery($query);
+				$username	= $customTemp[0];
+				$email		= $customTemp[1];
+				$subid=$userTemp[0]['SubsID'];
+				$SubsID = $userTemp[0]['SubsID'];
+				if(count($userTemp) ==0)
+				{
+				$query = "INSERT INTO `ta_user_subscriptions` (`UserName` ,`Email` ,`PackageID` ,`subscr_id`,`DT`, `affiliateid` ,`status`,`next_payment_date`)
+				VALUES ('$customTemp[0]', '$customTemp[1]', '$customTemp[2]', '".$_POST['subscr_id']."', '$phpnewdate','$customTemp[3]', 'Y', '$next_date')";
+				$SubsID = insertQuery($query);
+     			}
+				else if($sub_status=="subscr_payment")
+				{ 
+					$query = "UPDATE `ta_user_subscriptions` SET `affiliateid` = '$customTemp[3]', `next_payment_date` = '$next_date',`status`='Y' WHERE  `UserName` ='$customTemp[0]' " ;
+					runQuery($query);
+					$SubsID = $userTemp[0]['SubsID'];
+					$email	= $userTemp[0]['Email'];
+				}
+				else if($sub_status=="subscr_signup")
+				{
+				//in the case of upgrade the package
+				$query = "INSERT INTO `ta_user_subscriptions` (`UserName` ,`Email` ,`PackageID`,`subscr_id` ,`DT`, `affiliateid` ,`status`,`next_payment_date`)
+				VALUES ('$customTemp[0]', '$customTemp[1]', '$customTemp[2]','".$_POST['subscr_id']."', '$phpnewdate','$customTemp[3]', 'Y', '$next_date')";
+				$SubsID = insertQuery($query);
+				$updtequery = "UPDATE `ta_user_subscriptions` SET `affiliateid` = '$customTemp[3]', `next_payment_date` = '$next_date',`status`='N' WHERE  `SubsID` ='$subid' " ;
+				runQuery($updtequery);
+				$packgquery="SELECT u.`UserID`, u.`RefID`, u.`UserName`,p.`packageID`,p.`campaignLimit`,p.`keywordLimit`,p.`rssFeeds`,p.`twitterAcc`,p.`autoTweet`,p.`followLimit`  FROM `ta_user_subscriptions`us LEFT JOIN `ta_packages` p ON us.`packageID`=p.`packageID` LEFT JOIN  `ta_users` u ON us.`UserName`=u.`UserName` WHERE  us.`UserName` ='$customTemp[0]' and status='Y'";
+				$packgresult 	  = runQuery($packgquery);
+				$campaignLimit =$packgresult[0]['campaignLimit'];
+				$keywordLimit  =$packgresult[0]['keywordLimit'];
+				$rssFeeds         =$packgresult[0]['rssFeeds'];
+				$twitterAcc      =$packgresult[0]['twitterAcc'];
+				$autoTweet     =$packgresult[0]['autoTweet'];
+				$followLimit      =$packgresult[0]['followLimit'];
+				$UserID     		 =$packgresult[0]['UserID'];
+				$RefID     		 =$packgresult[0]['RefID'];
+				$campquery	= "SELECT CampaignID FROM `ta_campaigns` WHERE `RefID` = '$RefID' ";
+				$campresult 	= runQuery($campquery);
+				$totfeed=0;
+				for($i=0;$i<count($campresult);$i++)
+				{
+					$campid=$campresult[$i]['CampaignID'];
+					$feedquery		= "SELECT count(*) as cnt FROM `ta_feeds` WHERE `CampaignID` = '$campid' ";
+					$feedresult 	= runQuery($feedquery);
+					$totfeed=	$totfeed+$feedresult[0]['cnt']; 
+				} 
+				$res2="";
+				if(($campresult[0]['cnt'])>$campaignLimit)
+				{
+				  $res2="Please make sure that your campaign limit is not over than your allowed limit in the package,Otherwise system will automatically delete your campaigns.";
+					}
+				$keyquery		= "SELECT count(*) as cnt FROM `ta_keyword_users` WHERE `UserID` = '$UserID' ";
+				$keyresult 	= runQuery($keyquery);
+				if(($keyresult[0]['cnt'])>$keywordLimit*$campaignLimit)
+				{
+				  $res2= "Please make sure that your Keyword limit is not over than your allowed limit in the package,Otherwise system will automatically delete your Keywords.";
+					}
+				if($totfeed>rssFeeds)
+				{
+				  $res2="Please make sure that your Feeds limit is not over than your allowed limit in the package,Otherwise system will automatically delete your Feeds.";
+					}
+				$query = " SELECT COUNT(*) AS cnt FROM  `ta_users` WHERE `RefID` = '$UserID' ";
+				$temp  = runQuery($query);
+				$addOnUser 	= $temp[0]['cnt'];		
+				if($addOnUser>$twitterAcc)
+				{
+				  $res2="Please make sure that your Twitter Account limit is not over than your allowed limit in the package,Otherwise system will automatically delete your Accounts.";
+				} 
+				if($res2!="")
+				{
+					$mail       = new PHPMailer();
+					$mail->AddReplyTo("noreply@twitjix.com","No Reply");
+					$mail->SetFrom('noreply@twitjix.com', 'No Reply');
+					$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!";
+					$mail->Subject    = "Thank you for upgrading your Twitacc subscription";
+						$body	= '
+					<table cellpadding="0" cellspacing="0" >
+					<tr>
+						<td style="padding:10px;">Hi, <strong>'.$username.'</strong></td>
+					</tr>
+					<tr>
+						<td>Thank you for upgrading your subscription.</td>
+					</tr>
+					<tr>
+						<td>'.$res2.'</td>
+					</tr>
+					<tr>
+						<td>You can sign in to the site with the following URL .</td>
+					</tr>
+					<tr>
+						<td>http://www.twitjix.com/index</td>
+					</tr>
+					<tr>
+						<td>Please provide your twitter username and password for login</td>
+					</tr>
+					<tr >
+						<td >Regards, </td>
+					</tr>
+					<tr >
+						<td >Team Twitacc </td>
+					</tr>
+					</table>';
+					$mail->AddAddress($email, $username);
+					$mail->MsgHTML($body);
+					if(!$mail->Send()) 
+					{
+					  	echo "Mailer Error: " . $mail->ErrorInfo;
+					} else 
+					{
+					 	 echo "Message sent! <br/>";
+					}
+				}
+			}
+			//upgrade  package ends here
+			if($freeTrialFlag)
+			{
+	        $phpdate		= date("Y-m-d", mktime(0, 0, 0, date('m'), date('d')+7, date('Y')));
+			}
+		  $query ="INSERT INTO `ta_subscription_details` (`sd_id` ,`subs_id` ,`payment_status` ,`payment_date` ,	`mc_currency` ,	`mc_fee` ,
+	
+			`mc_gross` ,	`date_record`)	VALUES ('0', '$SubsID', '$payment_status', '".$_POST['payment_date']."', '".$_POST['mc_currency']."', '".$_POST['mc_fee']."', '".$_POST['mc_gross']."', '".$phpdate."');";
+			executeQuery($query);
+			$mail       = new PHPMailer();
+			$mail->AddReplyTo("noreply@twitjix.com","No Reply");
+			$mail->SetFrom('noreply@twitjix.com', 'No Reply');
+			$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!";
+			$mail->Subject    = "Instant Payment Notification - Recieved Payment";
+			$body	= '
+			<table cellpadding="0" cellspacing="0" >
+			<tr>
+				<td style="padding:10px;">Hi, </td>
+			</tr>
+			<tr>
+				<td>An instant payment notification was successfully recieved from '.$username.' on '.date('m/d/Y').' at '.date('g:i A').'</td>
+			</tr>
+			<tr>
+				<td>Details</td>
+			</tr>
+			<tr>
+				<td>Username :'.$username.'</td>
+			</tr>
+			<tr>
+				<td>Payment Date :'.$_POST['payment_date'].'</td>
+			</tr>
+				<tr>
+				<td>Amount :'.$_POST['mc_gross'].$_POST['mc_currency'].'</td>
+			</tr>
+			</table>';
+			$mail->AddAddress("Sharon@logicsupport.com", "");
+			$mail->MsgHTML($body);
+		  if(!$mail->Send()) 
+			{
+			  echo "Mailer Error: " . $mail->ErrorInfo;
+			} else 
+			{
+			  echo "Message sent! <br/>";
+			}
+			//send mail to user
+			$mail       = new PHPMailer();
+			$mail->AddReplyTo("noreply@twitjix.com","No Reply");
+			$mail->SetFrom('noreply@twitjix.com', 'No Reply');
+			$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!";
+			$mail->Subject    = "Twitacc subscription confirmation";
+			$sql3 =  "SELECT * FROM ta_email_template WHERE status='Active' and t_id='2'";
+			$gettempdetails3 = runQuery($sql3);
+			//start sending mail to user
+			if(count($gettempdetails3)>0)
+			{
+					if(file_exists("../mailtempl/".$gettempdetails3[0]["t_file"]))
+						{
+								//Output a line of the file until the end is reached
+								$file2 = fopen("../mailtempl/".$gettempdetails3[0]["t_file"], "r") or exit("Unable to open file!");
+								//$body="Hi {$username},\n"; 
+									while(!feof($file2))
+									{
+										 $body.=fgets($file2);
+									}
+									 fclose($file2);
+						   $body=str_replace('{username}',	$username,$body);	
+						   $mail->AddAddress($email, $username);
+						   $mail->MsgHTML($body);
+						   if(!$mail->Send()) 
+							{
+							  echo "Mailer Error: " . $mail->ErrorInfo;
+							} else 
+							{
+								  echo "Message sent! <br/>";
+							}
+				    }
+			}
+			//end sending mail to user
+		 }
+		}
+	
+	}
+}
+?>

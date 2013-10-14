@@ -1,0 +1,9 @@
+INSERT INTO `ta_subscription_details` (`sd_id` ,`subs_id` ,`payment_status` ,`payment_date` ,	`mc_currency` ,	`mc_fee` ,
+
+		`mc_gross` ,	`date_record`)	VALUES ('0', '', 'Completed', '01:04:31 Aug 31, 2010 PDT', 'USD', '0.50', '5.99', '2010-08-31');INSERT INTO `ta_subscription_details` (`sd_id` ,`subs_id` ,`payment_status` ,`payment_date` ,	`mc_currency` ,	`mc_fee` ,
+	
+			`mc_gross` ,	`date_record`)	VALUES ('0', '', 'Completed', '', '', '', '', '2010-08-31');INSERT INTO `ta_subscription_details` (`sd_id` ,`subs_id` ,`payment_status` ,`payment_date` ,	`mc_currency` ,	`mc_fee` ,
+	
+			`mc_gross` ,	`date_record`)	VALUES ('0', '0', 'Completed', '', '', '', '', '2010-08-31');INSERT INTO `ta_subscription_details` (`sd_id` ,`subs_id` ,`payment_status` ,`payment_date` ,	`mc_currency` ,	`mc_fee` ,
+	
+			`mc_gross` ,	`date_record`)	VALUES ('0', '110', 'Completed', '', '', '', '', '2010-08-31');

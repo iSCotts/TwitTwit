@@ -1,0 +1,30 @@
+body {height:100%; margin:0;}
+#basic-modal-content {display:none; text-align:center;}
+
+/* Overlay */
+#simplemodal-overlay {background-color:#12404F; cursor:wait;}
+
+/* Container */
+#simplemodal-container 
+{
+	padding:30px 0 0 0;
+	height:100px; width:350px; color:#fff; background-color:#235C6F; border:8px solid #478AA0;;
+	line-height:12px;
+}
+#simplemodal-container a.modalCloseImg {background:url(../images/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+.yesorno {
+	margin:10px 0 0 0;
+	padding:0 10px 0 10px;
+	width:80px;
+	text-align:center;
+	vertical-align:bottom;
+	border:0;
+	color:#fff;
+	font-size:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	background:url(../images/btn_slice.jpg) repeat-x;
+}
+.con-popup {
+	height:90px;
+}

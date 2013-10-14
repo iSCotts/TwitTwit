@@ -1,0 +1,26 @@
+
+ <!--<script type="text/javascript" src="../js/jquery.js"></script>
+<script 	type="text/javascript" src="<?php echo JS_PATH.'date.js' ?>"></script>
+<script 	type="text/javascript" src="<?php echo JS_PATH.'query.datePicker.js' ?>"></script>
+<link 	rel="stylesheet" type="text/css" media="screen" 	href="<?php echo CSS_PATH.'datePicker.css' ?>">
+<script	src="<?php echo JS_PATH.'jquery.validate.js' ?>" type="text/javascript"></script>
+<script	src="<?php echo JS_PATH.'jquery.pagnation.js' ?>" type="text/javascript"></script>
+<script src="<?php echo SRCH_PATH.'jquery.hotkeys.js' ?>" type="text/javascript"></script>
+<script src="<?php echo SRCH_PATH.'searchFollow.js' ?>" type="text/javascript"></script>
+ <script src="<?php echo FACEBX_PATH.'facebox_big.js' ?>" type="text/javascript"></script>
+ <link href="<?php echo FACEBX_PATH.'facebox_big.css' ?>" media="screen" rel="stylesheet" type="text/css" /> -->
+
+
+				<div class="forms02">
+				<?php print $Message; ?>
+				</div>	
+					 <?php
+$dkPackage 			= dkGetPackagedetails($refuser123);
+$dkGetNoAdd     	= dkGetNoAddons($refuser); 
+if($dkGetNoAdd >= $dkPackage['twitterAcc'])
+{
+	$Message='<div class=error>You have created '.$dkGetNoAdd.' accounts and your Twitter Account limit is over.<a href="upgrade"> Please upgrade your account.</a></div>';
+}
+else{
+?>						 
+	

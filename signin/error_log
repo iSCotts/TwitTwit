@@ -1,0 +1,353 @@
+[18-Jun-2010 07:20:38] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[18-Jun-2010 13:39:47] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[22-Jun-2010 03:44:30] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[07-Jul-2010 11:47:11] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[09-Jul-2010 07:26:19] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[19-Jul-2010 08:02:28] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 08:04:18] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 08:17:34] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 08:22:52] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[19-Jul-2010 11:27:28] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[19-Jul-2010 11:34:33] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 11:35:24] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 11:38:49] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 11:44:18] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[19-Jul-2010 11:44:21] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[19-Jul-2010 12:23:21] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 12:23:27] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 12:35:22] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[19-Jul-2010 22:39:04] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[20-Jul-2010 00:52:52] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[20-Jul-2010 00:56:35] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[20-Jul-2010 01:00:14] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[20-Jul-2010 01:12:33] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Error</title>
+    <link href="http://s.twimg.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(http://s.twimg.com/images/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 8px; float: left; padding-bottom:  in /home/twitacc/public_html/classes/EpiOAuth.php on line 251
+[20-Jul-2010 01:32:33] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[20-Jul-2010 01:33:21] PHP Fatal error:  Uncaught exception 'EpiOAuthUnauthorizedException' with message '<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <request>/oauth/access_token</request>
+  <error>Invalid / expired Token</error>
+</hash>
+' in /home/twitacc/public_html/classes/EpiOAuth.php:249
+Stack trace:
+#0 /home/twitacc/public_html/classes/EpiOAuth.php(228): EpiOAuthException::raise('<?xml version="...', 401)
+#1 /home/twitacc/public_html/signin/confirm.php(17): EpiOAuthResponse->__get('oauth_token')
+#2 {main}
+  thrown in /home/twitacc/public_html/classes/EpiOAuth.php on line 249
+[31-Aug-2010 07:14:47] PHP Warning:  Unknown: Your script possibly relies on a session side-effect which existed until PHP 4.2.3. Please be advised that the session extension does not consider global variables as a source of data, unless register_globals is enabled. You can disable this functionality and this warning by setting session.bug_compat_42 or session.bug_compat_warn to off, respectively in Unknown on line 0
+[31-Aug-2010 07:20:18] PHP Parse error:  syntax error, unexpected T_ELSE in /home/twitacc/public_html/signin/confirm.php on line 104
+[31-Aug-2010 07:22:16] PHP Parse error:  syntax error, unexpected T_ELSE in /home/twitacc/public_html/signin/confirm.php on line 104
+[31-Aug-2010 07:22:19] PHP Parse error:  syntax error, unexpected T_ELSE in /home/twitacc/public_html/signin/confirm.php on line 104
+[31-Aug-2010 07:22:21] PHP Parse error:  syntax error, unexpected T_ELSE in /home/twitacc/public_html/signin/confirm.php on line 104
+[31-Aug-2010 07:22:25] PHP Parse error:  syntax error, unexpected T_ELSE in /home/twitacc/public_html/signin/confirm.php on line 104
+[31-Aug-2010 08:01:40] PHP Warning:  Unknown: Your script possibly relies on a session side-effect which existed until PHP 4.2.3. Please be advised that the session extension does not consider global variables as a source of data, unless register_globals is enabled. You can disable this functionality and this warning by setting session.bug_compat_42 or session.bug_compat_warn to off, respectively in Unknown on line 0
+[19-Sep-2010 10:28:39] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/twitacc/public_html/classes/EpiCurl.php on line 64
+[19-Sep-2010 10:28:39] PHP Warning:  (null)(): 11 is not a valid cURL handle resource in Unknown on line 0
+[19-Nov-2010 04:08:29] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/twitacc/public_html/classes/EpiCurl.php on line 64
+[19-Nov-2010 04:08:29] PHP Warning:  (null)(): 11 is not a valid cURL handle resource in Unknown on line 0
+[11-May-2011 07:50:51] PHP Fatal error:  Uncaught exception 'EpiOAuthException' with message '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Twitter / Over capacity</title>
+    <link href="//si0.twimg.com/sticky/error_pages/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+      /* Page
+      ----------------------------------------------- */
+      * { border: 0; padding: 0; margin: 0; }
+      body{ margin: 10px 0; background:#C0DEED url(//si0.twimg.com/sticky/error_pages/bg-clouds.png) repeat-x; color:#333; font: 12px Lucida Grande, Arial, sans-serif; text-align:center }
+      #container { width: 755px; margin: 0 auto; padding: 0px 0; text-align: left; position: relative; }
+      #content { width: 100%; margin-top: 0px; flo in /home/twitacc/public_html/common/EpiOAuth.php on line 251
